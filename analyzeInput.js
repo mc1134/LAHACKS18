@@ -63,5 +63,5 @@ function runComparison() {
 		})(f);
 		analyzeInput();
 		console.log("Finished.");
-	}
+	}, false);
 }
