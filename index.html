@@ -7,7 +7,7 @@
 
 
 <body class="background-dark">
-	<h1>Choose an input file:</h1>
+	<h1 class="text">Choose an input file:</h1>
 	<button type="button" onclick="uploadFile();" class="button-light">Button</button>
 	<input type="file" id="mid-input-file">
 	<script>
@@ -30,11 +30,50 @@
 	<br>
 	<hr style="width:90%">
 
-	<h1>Choose an output file:</h1>
+	<h1 class="text">Choose an output file:</h1>
 	<select style="font-family: Catamaran">
+		<option value="default">Choose a file</option>
 		<option value="scale">scale.mid</option>
 		<option value="short">short.mid</option>
 	</select>
+	<br>
+	<br>
+	<hr>
+
+	<table><tbody>
+	<tr>
+		<td>
+			<h1 class="text">Choose an input file:</h1>
+			<button type="button" onclick="uploadFile();" class="button-light">Button</button>
+			<input type="file" id="mid-input-file">
+			<script>
+			console.log("Hello world!");
+			var control = document.getElementById("mid-input-file");
+			control.addEventListener("change", function(event) {
+				var i = 0;
+				files = control.files;
+				len = files.length;
+				for(; i < len; i++) {
+					console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
+				}
+			}, false);
+			var freader = new FileReader();
+			function uploadFile() {
+				console.log("Inside onload");
+				freader.onload = function(f) { return function(e) { var contents = e.target.result; console.log("contents: " + contents); };};
+			}
+			</script>
+		</td>
+		<td>
+			<h1 class="text">Choose an output file:</h1>
+			<select style="font-family: Catamaran">
+				<option value="default">Choose a file</option>
+				<option value="scale">scale.mid</option>
+				<option value="short">short.mid</option>
+			</select>	
+		</td>
+	</tr>
+		</tbody></table>
 </body>
 
 </html>

@@ -23,3 +23,26 @@ body{
 	background: #bbeeff;
 	font-family: "Catamaran";
 }
+
+/* Styles for text. */
+
+.text{
+	color: #bbeeff;
+	font-size: 100%;
+	text-shadow: 0em 0em 0.3em #3399ff;
+	transition: 0.5s;
+}
+.text:hover{
+	text-shadow: 0em 0em 0.5em #eeee00;
+	transition: 1s;
+}
+.text-large{
+	color: #bbeeff;
+	font-size: 150%;
+	text-shadow: 0em 0em 0.3em #3399ff;
+	transition: 0.5s;
+}
+.text-large:hover{
+	text-shadow: 0em 0em 0.5em #eeee00;
+	transition: 1s;
+}
