@@ -25,4 +25,4 @@ function analyzeInput() {
 
 const DEFAULT_FILENAME = "input.mid";
 
-export { analyzeInput, DEFAULT_FILENAME };
+module.exports = { analyzeInput, DEFAULT_FILENAME };
