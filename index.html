@@ -8,6 +8,7 @@
 
 <body class="background-dark">
 	<h1 class="text-large" align="center">MIDI-based page turner</h1>
+	<br><br><hr align="center" width="90%">
 
 	<div align="center" width="90%">
 	<table><tbody>
@@ -26,11 +27,6 @@
 					console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
 				}
 			}, false);
-			var freader = new FileReader();
-			function uploadFile() {
-				console.log("Inside onload");
-				freader.onload = function(f) { return function(e) { var contents = e.target.result; console.log("contents: " + contents); };};
-			}
 			</script>
 		</td>
 		<td style="border-left: 1px solid #000" align="center">
@@ -45,6 +41,13 @@
 	</tbody></table>
 	</div>
 	<button type="button" onclick="uploadFile();" class="button-light" align="center">Button</button>
+	<script>
+		var freader = new FileReader();
+		function uploadFile() {
+			console.log("Inside onload");
+			freader.onload = function(f) { return function(e) { var contents = e.target.result; console.log("contents: " + contents); };};
+		}
+	</script>
 </body>
 
 </html>
