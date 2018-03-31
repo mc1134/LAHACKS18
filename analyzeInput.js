@@ -12,9 +12,9 @@
  * https://www.sitepoint.com/understanding-module-exports-exports-node-js/
  */
 
-var exports = module.exports = {};
+const DEFAULT_FILENAME = "input.mid";
 
-exports.analyzeInput = function() {
+function analyzeInput() {
 	console.log("Entering analyzeInput...");
 	var a = 1 + 1000000 - 50 * 40;
 	console.log("a is " + a);
@@ -26,4 +26,42 @@ exports.analyzeInput = function() {
 	console.log("Exiting analyzeInput...");
 }
 
-exports.DEFAULT_FILENAME = "input.mid";
+function handleHaystack() {
+	var control = document.getElementById("mid-input-file");
+	control.addEventListener("change", function(event) {
+		console.log("Retrieving MIDI file...");
+		var i = 0;
+		files = control.files;
+		len = files.length;
+		for(; i < len; i++) {
+			console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
+		}
+		console.log("File retrieved.");
+	}, false);
+}
+
+function handleNeedle() {
+	var control = document.getElementById("mid-test-file");
+	control.addEventListener("change", function(event) {
+		console.log("Retrieving test MIDI file...");
+		name = control.value;
+		console.log("name: " + name);
+		console.log("File retrieved.");
+	}, false);
+}
+
+function runComparison() {
+	var freader = new FileReader();
+	var control = document.getElementById("run-comparison");
+	control.addEventListener("change", function(event) {
+		console.log("Running comparison...");
+		freader.onload = (function(f) {
+			return function(e) {
+				var contents = e.target.result;
+				console.log("contents: " + contents);
+			};
+		})(f);
+		analyzeInput();
+		console.log("Finished.");
+	}
+}

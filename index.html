@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	<script src="analyzeInput.js"></script>
 	<title>MBPT</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,38 +16,16 @@
 	<tr>
 		<td style="border-right: 2px solid #ddd" align="center" width="45%">
 			<h1 class="text">Choose an input file:</h1>
-			<input class="text" type="file" id="mid-input-file" style="font-family:Catamaran">
-			<script>
-			var control = document.getElementById("mid-input-file");
-			control.addEventListener("change", function(event) {
-				console.log("Retrieving MIDI file...");
-				var i = 0;
-				files = control.files;
-				len = files.length;
-				for(; i < len; i++) {
-					console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
-				}
-				console.log("File retrieved.");
-			}, false);
-			</script>
+			<input class="text" type="file" id="mid-input-file" style="font-family:Catamaran" onclick="handleHaystack();">
 		</td>
 		<td style="text-align:center" align="center" width="45%">
 			<h1 class="text">Choose an output file:</h1>
-			<select id="mid-test-file" style="font-family: Catamaran">
+			<select id="mid-test-file" style="font-family: Catamaran" onclick="handleNeedle();">
 				<option value="default">Choose File</option>
 				<option value="scale">scale.mid</option>
 				<option value="short">short.mid</option>
 				<option value="twinkle">twinkle.mid</option>
 			</select>
-			<script>
-			var control = document.getElementById("mid-test-file");
-			control.addEventListener("change", function(event) {
-				console.log("Retrieving test MIDI file...");
-				name = control.value;
-				console.log("name: " + name);
-				console.log("File retrieved.");
-			}, false);
-			</script>
 		</td>
 	</tr>
 	</tbody></table>
@@ -54,38 +33,7 @@
 	<hr width="90%"><br>
 
 	<div align="center">
-		<input class="button-light" type="button" id="run-comparison" value="Run comparison">
-		<script src="analyzeInput.js">
-		var freader = new FileReader();
-		var control = document.getElementById("run-comparison");
-		control.addEventListener("change", function(event) {
-			console.log("Running comparison...");
-			freader.onload = (function(f) {
-				return function(e) {
-					var contents = e.target.result;
-					console.log("contents: " + contents);
-				};
-			})(f);
-			analyzeInput();
-			console.log("Finished.");
-		}
-		</script>
-		<!--
-		<script src="analyzeInput.js">
-		console.log("Entering runComparison");
-		function runComparison() {
-			console.log("Inside runComparison");
-			freader.onload = (function(f) {
-				return function(e) {
-					var contents = e.target.result;
-					console.log("contents: " + contents);
-				};
-			})(f);
-			analyzeInput();
-		}
-		console.log("Exiting runComparison");
-		</script>
-		-->
+		<input class="button-light" type="button" id="run-comparison" value="Run comparison" onclick="analyzeInput();">
 	</div>
 </body>
 
