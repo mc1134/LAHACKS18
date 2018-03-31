@@ -5,9 +5,27 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
+<input type="file" id="mid-files">
+<script>
+	console.log("Hello world!");
+	var control = document.getElementById("mid-files");
+	control.addEventListener("change", function(event) {
+		var i = 0;
+		files = control.files;
+		len = files.length;
+		for(; i < len; i++) {
+			console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
+		}
+	}, false);
+var freader = new FileReader();
+freader.onload = uploadFile() {
+	console.log("Inside onload");
+}
+</script>
+
 <body>
 	<h1>This is a header</h1>
-	<button type="button">Button</button>
+	<button type="button" onclick="uploadFile();">Button</button>
 </body>
 
 </html>
