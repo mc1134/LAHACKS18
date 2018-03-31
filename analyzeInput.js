@@ -18,7 +18,7 @@ function analyzeInput() {
 	console.log("Exiting analyzeInput...");
 }
 
-export { myFunction };
+export { analyzeInput };
 export const DEFAULT_FILENAME = "input.mid"
 
 //var buf = new ArrayBuffer(16);
