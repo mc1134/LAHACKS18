@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<script src="analyzeInput.js">
-	var freader = new FileReader();
-	console.log("Entering runComparison");
-	function runComparison() {
-		console.log("Inside runComparison");
-		freader.onload = (function(f) {
-			return function(e) {
-				var contents = e.target.result;
-				console.log("contents: " + contents);
-			};
-		})(f);
-		analyzeInput();
-	}
-	console.log("Exiting runComparison");
-	</script>
 	<title>MBPT</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -59,7 +44,7 @@
 				console.log("Retrieving test MIDI file...");
 				name = control.value;
 				console.log("name: " + name);
-				console.log("File retrieved.);
+				console.log("File retrieved.");
 			}, false);
 			</script>
 		</td>
@@ -69,7 +54,38 @@
 	<hr width="90%"><br>
 
 	<div align="center">
-		<input class="button-light" type="button" onclick="runComparison();" value="Run comparison">
+		<input class="button-light" type="button" id="run-comparison" value="Run comparison">
+		<script src="analyzeInput.js">
+		var freader = new FileReader();
+		var control = document.getElementById("run-comparison");
+		control.addEventListener("change", function(event) {
+			console.log("Running comparison...");
+			freader.onload = (function(f) {
+				return function(e) {
+					var contents = e.target.result;
+					console.log("contents: " + contents);
+				};
+			})(f);
+			analyzeInput();
+			console.log("Finished.");
+		}
+		</script>
+		<!--
+		<script src="analyzeInput.js">
+		console.log("Entering runComparison");
+		function runComparison() {
+			console.log("Inside runComparison");
+			freader.onload = (function(f) {
+				return function(e) {
+					var contents = e.target.result;
+					console.log("contents: " + contents);
+				};
+			})(f);
+			analyzeInput();
+		}
+		console.log("Exiting runComparison");
+		</script>
+		-->
 	</div>
 </body>
 
