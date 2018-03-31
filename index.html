@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	<script src="analyzeInput.js">
+	var freader = new FileReader();
+	console.log("Entering runComparison");
+	function runComparison() {
+		console.log("Inside runComparison");
+		freader.onload = (function(f) {
+			return function(e) {
+				var contents = e.target.result;
+				console.log("contents: " + contents);
+			};
+		})(f);
+		analyzeInput();
+	}
+	console.log("Exiting runComparison");
+	</script>
 	<title>MBPT</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,7 +32,7 @@
 			<h1 class="text">Choose an input file:</h1>
 			<input type="file" id="mid-input-file">
 			<script>
-			console.log("Hello world!");
+			console.log("Retrieving MIDI file...");
 			var control = document.getElementById("mid-input-file");
 			control.addEventListener("change", function(event) {
 				var i = 0;
@@ -27,6 +42,8 @@
 					console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
 				}
 			}, false);
+			console.log(control);
+			console.log("File retrieved.");
 			</script>
 		</td>
 		<td style="text-align:center" align="center" width="45%">
@@ -35,6 +52,7 @@
 				<option value="default">Choose a file</option>
 				<option value="scale">scale.mid</option>
 				<option value="short">short.mid</option>
+				<option value="twinkle">twinkle.mid</option>
 			</select>
 		</td>
 	</tr>
@@ -42,15 +60,7 @@
 	</div>
 	<hr width="90%">
 
-	<button type="button" onclick="uploadFile();" class="button-light" align="center">Run comparison</button>
-	<script src="analyzeInput.js">
-		var freader = new FileReader();
-		function uploadFile() {
-			console.log("Inside onload");
-			freader.onload = function(f) { return function(e) { var contents = e.target.result; console.log("contents: " + contents); };};
-			analyzeInput();
-		}
-	</script>
+	<button type="button" onclick="runComparison();" class="button-light" align="center">Run comparison</button>
 </body>
 
 </html>
