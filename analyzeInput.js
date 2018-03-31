@@ -11,6 +11,9 @@
  * https://www.html5rocks.com/en/tutorials/file/dndfiles/
  */
 
+export function analyzeInput()
+
+
 function analyzeInput() {
 	console.log("Entering analyzeInput...");
 	var a = 1 + 1000000 - 50 * 40;
