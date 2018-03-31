@@ -11,9 +11,6 @@
  * https://www.html5rocks.com/en/tutorials/file/dndfiles/
  */
 
-export function analyzeInput()
-
-
 function analyzeInput() {
 	console.log("Entering analyzeInput...");
 	var a = 1 + 1000000 - 50 * 40;
@@ -21,9 +18,8 @@ function analyzeInput() {
 	console.log("Exiting analyzeInput...");
 }
 
-var filename = "input.mid"
-
-
+export { myFunction };
+export const DEFAULT_FILENAME = "input.mid"
 
 //var buf = new ArrayBuffer(16);
 //var blob = new Blob([buf]);
