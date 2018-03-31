@@ -11,6 +11,13 @@
  * https://www.html5rocks.com/en/tutorials/file/dndfiles/
  */
 
+function analyzeInput() {
+	console.log("Entering analyzeInput...");
+	var a = 1 + 1000000 - 50 * 40;
+	console.log("a is " + a);
+	console.log("Exiting analyzeInput...");
+}
+
 var filename = "input.mid"
 
 

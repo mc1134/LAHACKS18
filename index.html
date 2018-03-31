@@ -13,7 +13,7 @@
 	<div align="center" width="90%">
 	<table><tbody>
 	<tr>
-		<td style="border-right: 3px solid #fff" align="center">
+		<td style="border-right: 2px solid #ddd" align="center">
 			<h1 class="text">Choose an input file:</h1>
 			<input type="file" id="mid-input-file">
 			<script>
@@ -40,12 +40,15 @@
 	</tr>
 	</tbody></table>
 	</div>
-	<button type="button" onclick="uploadFile();" class="button-light" align="center">Button</button>
+	<hr width="90%">
+
+	<button type="button" onclick="uploadFile();" class="button-light" align="center">Run comparison</button>
 	<script>
 		var freader = new FileReader();
 		function uploadFile() {
 			console.log("Inside onload");
 			freader.onload = function(f) { return function(e) { var contents = e.target.result; console.log("contents: " + contents); };};
+			analyzeInput();
 		}
 	</script>
 </body>
