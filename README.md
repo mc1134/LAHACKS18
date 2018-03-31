@@ -1,10 +1,5 @@
 # LAHACKS18
 
-## Dedications
-
-Joseph Chen for being a programming inspiration
-
-Walter Chang for suggesting the problem in the first place
 
 ## Description
 
@@ -21,3 +16,9 @@ A description of the app
 ## Members
 
 Michael Chen
+
+## Dedications
+
+Joseph Chen for being a programming inspiration
+
+Walter Chang for suggesting the problem in the first place
