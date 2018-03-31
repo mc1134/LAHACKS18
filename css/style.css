@@ -4,7 +4,22 @@ body{
 	font-family: "Catamaran";
 }
 
-.button{
+/* Background styles. */
+
+.background-dark{
+	background: #222233;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+.background-light{
+	background: #ddddee;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+/* Styles for buttons */
+
+.button-light{
 	background: #bbeeff;
-	font: "Catamaran";
+	font-family: "Catamaran";
 }
