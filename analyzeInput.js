@@ -9,9 +9,12 @@
  * Sources:
  * https://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html
  * https://www.html5rocks.com/en/tutorials/file/dndfiles/
+ * https://www.sitepoint.com/understanding-module-exports-exports-node-js/
  */
 
-function analyzeInput() {
+var exports = module.exports = {};
+
+exports.analyzeInput = function() {
 	console.log("Entering analyzeInput...");
 	var a = 1 + 1000000 - 50 * 40;
 	console.log("a is " + a);
@@ -23,6 +26,4 @@ function analyzeInput() {
 	console.log("Exiting analyzeInput...");
 }
 
-const DEFAULT_FILENAME = "input.mid";
-
-module.exports = { analyzeInput, DEFAULT_FILENAME };
+exports.DEFAULT_FILENAME = "input.mid";

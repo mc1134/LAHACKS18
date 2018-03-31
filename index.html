@@ -30,18 +30,10 @@
 	<tr>
 		<td style="border-right: 2px solid #ddd" align="center" width="45%">
 			<h1 class="text">Choose an input file:</h1>
-			<input type="file" id="mid-input-file" style="font-family:Catamaran">
+			<input class="text" type="file" id="mid-input-file" style="font-family:Catamaran">
 			<script>
 			console.log("Retrieving MIDI file...");
 			var control = document.getElementById("mid-input-file");
-			control.addEventListener("change", function(event) {
-				var i = 0;
-				files = control.files;
-				len = files.length;
-				for(; i < len; i++) {
-					console.log("name: " + files[i].name + "; type: " + files[i].type + "; size: " + files[i].size + " bytes");
-				}
-			}, false);
 			console.log(control);
 			console.log("File retrieved.");
 			</script>
@@ -61,7 +53,7 @@
 	<hr width="90%"><br>
 
 	<div align="center">
-		<button type="button" onclick="runComparison();" class="button-light">Run comparison</button>
+		<input class="button-light" type="button" onclick="runComparison();" value="Run comparison">
 	</div>
 </body>
 
