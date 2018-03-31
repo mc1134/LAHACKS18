@@ -1,5 +1,6 @@
 # LAHACKS18
 
+## Name: MIDI-based page turner
 
 ## Description
 
