@@ -15,17 +15,14 @@ function analyzeInput() {
 	console.log("Entering analyzeInput...");
 	var a = 1 + 1000000 - 50 * 40;
 	console.log("a is " + a);
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		console.log("Success!");
+	} else {
+		alert('The File APIs are not fully supported by your browser.');
+	}
 	console.log("Exiting analyzeInput...");
 }
 
-export { analyzeInput };
-export const DEFAULT_FILENAME = "input.mid"
+const DEFAULT_FILENAME = "input.mid";
 
-//var buf = new ArrayBuffer(16);
-//var blob = new Blob([buf]);
-
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-	console.log("Success!");
-} else {
-	alert('The File APIs are not fully supported by your browser.');
-}
+export { analyzeInput, DEFAULT_FILENAME };
