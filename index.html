@@ -40,11 +40,11 @@
 	<br>
 	<hr>
 
+	<div align="center">
 	<table><tbody>
 	<tr>
-		<td>
+		<td style="border-right: 1px solid #000">
 			<h1 class="text">Choose an input file:</h1>
-			<button type="button" onclick="uploadFile();" class="button-light">Button</button>
 			<input type="file" id="mid-input-file">
 			<script>
 			console.log("Hello world!");
@@ -64,16 +64,18 @@
 			}
 			</script>
 		</td>
-		<td>
+		<td style="border-left: 1px solid #000">
 			<h1 class="text">Choose an output file:</h1>
 			<select style="font-family: Catamaran">
 				<option value="default">Choose a file</option>
 				<option value="scale">scale.mid</option>
 				<option value="short">short.mid</option>
-			</select>	
+			</select>
 		</td>
 	</tr>
-		</tbody></table>
+	</tbody></table>
+	</div>
+	<button type="button" onclick="uploadFile();" class="button-light" align="center">Button</button>
 </body>
 
 </html>
