@@ -55,7 +55,7 @@ https://docs.google.com/spreadsheets/d/1yZE8zTO1hTdh1NfTp0zzBJWLRIfEBLXHjr6qmIoL
 
 ## Other information:
 
-https://docs.google.com/document/d/1FB\_Dc3iVBfs8ymNyBe1rfX3XZSMdm-sHPh0LxsjhQck/edit
+https://docs.google.com/document/d/1FB_Dc3iVBfs8ymNyBe1rfX3XZSMdm-sHPh0LxsjhQck/edit
 
 ## Members
 
