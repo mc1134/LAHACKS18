@@ -83,6 +83,7 @@ function bin2ascii(strInput) {
 	var message = "";
 	for(var i = 0; i < len; i++) {
 		// console output management
+		/*
 		out = "";
 		var num = parseInt(str.substring(0,8), 2);
 		var j = num.toString(10);
@@ -91,6 +92,7 @@ function bin2ascii(strInput) {
 		x[i] = j;
 		out += "x[" + i + "]: " + x[i];
 		console.log(out);
+		*/
 		// only important part
 		message += String.fromCharCode(j);
 	}
